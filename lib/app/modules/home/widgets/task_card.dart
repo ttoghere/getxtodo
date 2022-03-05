@@ -22,7 +22,7 @@ class TaskCard extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.red[900]!,
+            color: Colors.grey[300]!,
             blurRadius: 7,
             offset: Offset(0, 7),
           ),
@@ -33,7 +33,7 @@ class TaskCard extends StatelessWidget {
         children: [
           //T0D0 change to dynamic after finish todo Crud
           StepProgressIndicator(
-            totalSteps: 10,
+            totalSteps: 100,
             currentStep: 88,
             size: 5,
             padding: 0,
@@ -48,6 +48,37 @@ class TaskCard extends StatelessWidget {
               colors: [
                 Colors.white,
                 Colors.white,
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(6.0.wp),
+            child: Icon(
+              IconData(task.icon, fontFamily: 'MaterialIcons'),
+              color: color,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(6.0.wp),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  task.title,
+                  style:
+                      TextStyle(fontSize: 12.0.sp, fontWeight: FontWeight.bold),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(
+                  height: 2.0.wp,
+                ),
+                Text(
+                  '${task.todos?.length ?? 0} tasks',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey,
+                  ),
+                )
               ],
             ),
           )

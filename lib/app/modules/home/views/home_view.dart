@@ -25,20 +25,22 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
             ),
-            GridView.count(
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              physics: const ClampingScrollPhysics(),
-              children: [
-                TaskCard(
-                  task: Task(
-                    color: '#FF2B60E6',
-                    icon: 0xe59c,
-                    title: 'title',
-                  ),
-                ),
-                AddCard(),
-              ],
+            Obx(
+              () => GridView.count(
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                children: [
+                  ...controller.tasks
+                      .map(
+                        (e) => TaskCard(
+                          task: e,
+                        ),
+                      )
+                      .toList(),
+                  AddCard(),
+                ],
+              ),
             )
           ],
         ),

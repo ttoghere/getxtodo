@@ -12,7 +12,7 @@ class TaskProvider with ChangeNotifier {
     var tasks = <Task>[];
     //json to String for incoming data == jsonDecode
     jsonDecode(storageService.read(taskKey).toString())
-        .forEach((element) => element.add<String,dynamic>(Task.fromJson(element)));
+        .forEach((element) => tasks.add(Task.fromJson(element)));
     return tasks;
   }
 
