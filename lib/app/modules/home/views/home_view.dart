@@ -6,6 +6,7 @@ import 'package:getxtodo/app/core/utils/extensions.dart';
 import 'package:getxtodo/app/core/values/colors.dart';
 import 'package:getxtodo/app/data/models/task.dart';
 import 'package:getxtodo/app/modules/home/widgets/add_card.dart';
+import 'package:getxtodo/app/modules/home/widgets/add_dialog.dart';
 import 'package:getxtodo/app/modules/home/widgets/task_card.dart';
 
 import '../controllers/home_controller.dart';
@@ -64,7 +65,16 @@ class HomeView extends GetView<HomeController> {
             () => FloatingActionButton(
               backgroundColor:
                   controller.deleting.value ? Colors.red[900] : blue,
-              onPressed: () {},
+              onPressed: () {
+                if (controller.tasks.isNotEmpty) {
+                  Get.to(
+                    () => AddDialog(),
+                    transition: Transition.downToUp,
+                  );
+                } else {
+                  EasyLoading.showInfo('Please Create your Task type');
+                }
+              },
               child: Icon(
                 controller.deleting.value ? Icons.delete : Icons.add,
               ),
