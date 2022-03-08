@@ -2,11 +2,11 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:getxtodo/app/core/utils/extensions.dart';
-import 'package:getxtodo/app/core/values/colors.dart';
-import 'package:getxtodo/app/data/models/task.dart';
-import 'package:getxtodo/app/modules/home/controllers/home_controller.dart';
-import 'package:getxtodo/app/widgets/icons.dart';
+import '/app/core/utils/extensions.dart';
+import '/app/core/values/colors.dart';
+import '/app/data/models/task.dart';
+import '/app/modules/home/controllers/home_controller.dart';
+import '/app/widgets/icons.dart';
 
 class AddCard extends StatelessWidget {
   AddCard({Key? key}) : super(key: key);

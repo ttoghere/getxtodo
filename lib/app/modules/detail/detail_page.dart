@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:getxtodo/app/modules/detail/widgets/doing_list.dart';
-import 'package:getxtodo/app/modules/detail/widgets/done_list.dart';
+import '/app/modules/detail/widgets/doing_list.dart';
+import '/app/modules/detail/widgets/done_list.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import '/app/core/utils/extensions.dart';
 import '/app/modules/home/controllers/home_controller.dart';

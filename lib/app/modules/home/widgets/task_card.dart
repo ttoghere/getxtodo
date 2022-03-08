@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxtodo/app/core/utils/extensions.dart';
-import 'package:getxtodo/app/modules/detail/detail_page.dart';
-import 'package:getxtodo/app/modules/home/controllers/home_controller.dart';
+import '/app/core/utils/extensions.dart';
+import '/app/modules/detail/detail_page.dart';
+import '/app/modules/home/controllers/home_controller.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import '../../../data/models/task.dart';
 

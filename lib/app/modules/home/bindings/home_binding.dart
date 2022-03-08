@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:getxtodo/app/data/providers/task_provider.dart';
-import 'package:getxtodo/app/data/storage/repository.dart';
+import '/app/data/providers/task_provider.dart';
+import '/app/data/storage/repository.dart';
 
 import '../controllers/home_controller.dart';
 
