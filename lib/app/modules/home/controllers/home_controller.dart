@@ -14,6 +14,8 @@ class HomeController extends GetxController {
   final chipIndex = 0.obs;
   final deleting = false.obs;
   final task = Rx<Task?>(null);
+  final doingTodos = <dynamic>[].obs;
+  final doneTodos = <dynamic>[].obs;
   @override
   void onInit() {
     super.onInit();
@@ -53,6 +55,20 @@ class HomeController extends GetxController {
 
   void deleteTask(Task task) {
     tasks.remove(task);
+  }
+
+  void changeTodos(List<dynamic> select) {
+    doingTodos.clear();
+    doneTodos.clear();
+    for (int i = 0; i < select.length; i++) {
+      var todo = select[i];
+      var status = todo["done"];
+      if (status == true) {
+        doneTodos.add(todo);
+      } else {
+        doingTodos.add(todo);
+      }
+    }
   }
 
   updateTask(Task task, String title) {
