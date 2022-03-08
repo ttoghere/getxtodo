@@ -72,6 +72,10 @@ class HomeController extends GetxController {
     }
   }
 
+  bool containeTodo(List<dynamic> todos, String title) {
+    return todos.any((element) => element["title"] == title);
+  }
+
   updateTask(Task task, String title) {
     var todos = task.todos ?? [];
     if (containeTodo(todos, title)) {
@@ -100,8 +104,13 @@ class HomeController extends GetxController {
     doingTodos.add(todo);
     return true;
   }
-}
 
-bool containeTodo(List todos, String title) {
-  return todos.any((element) => element["title"] == title);
+  void updateTodos() {
+    var newTodos = <Map<String, dynamic>>[];
+    newTodos.addAll([...doingTodos, ...doneTodos]);
+    var newTask = task.value!.copyWith(todos: newTodos);
+    int oldIndex = tasks.indexOf(task.value);
+    tasks[oldIndex] = newTask;
+    tasks.refresh();
+  }
 }

@@ -25,7 +25,9 @@ class DetailPage extends StatelessWidget {
                   IconButton(
                     onPressed: () {
                       Get.back();
+                      homeCtrl.updateTodos();
                       homeCtrl.changeTask(null);
+                      homeCtrl.editCtrl.clear();
                     },
                     icon: Icon(
                       Icons.arrow_back,
@@ -125,7 +127,8 @@ class DetailPage extends StatelessWidget {
                       ),
                       onPressed: () {
                         if (homeCtrl.formKey.currentState!.validate()) {
-                          var success = homeCtrl.addTodo(homeCtrl.editCtrl.text);
+                          var success =
+                              homeCtrl.addTodo(homeCtrl.editCtrl.text);
                           if (success) {
                             EasyLoading.showSuccess('List got a new task');
                           } else {
