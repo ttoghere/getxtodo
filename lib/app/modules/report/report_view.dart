@@ -99,7 +99,7 @@ class ReportPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        '${createdTasks == 0 ? 0 : percent} %',
+                        '${createdTasks == 0 ? 0 : double.parse(percent).toStringAsFixed(2)} %',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20.0.sp,
